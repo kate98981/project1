@@ -20,5 +20,6 @@ namespace lab1.Controllers
             return Dt.ToString("dddd");
             
         }
+
     }
 }

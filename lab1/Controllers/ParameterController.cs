@@ -18,4 +18,5 @@ namespace lab1.Controllers
             return num.ToString();
         }
     }
+
 }

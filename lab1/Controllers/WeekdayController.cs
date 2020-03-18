@@ -18,7 +18,6 @@ namespace lab1.Controllers
             string[] date = dt.Split(new char[] { '.' });
             DateTime Dt = new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0]));
             return Dt.ToString("dddd");
-         
             
         }
 

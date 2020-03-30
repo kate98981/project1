@@ -11,5 +11,6 @@ namespace lab2.Models
         public DbSet<Client> Clients { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Req> Reqs { get; set; }
+
     }
 }

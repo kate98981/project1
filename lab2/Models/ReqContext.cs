@@ -12,5 +12,10 @@ namespace lab2.Models
         public DbSet<Service> Services { get; set; }
         public DbSet<Req> Reqs { get; set; }
 
+        public ReqContext(DbContextOptions<ReqContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
     }
 }

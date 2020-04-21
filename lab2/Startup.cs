@@ -13,7 +13,7 @@ using Microsoft.Extensions.Options;
 using lab2.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace lab2
+namespace WebApplication4
 {
     public class Startup
     {
@@ -31,8 +31,7 @@ namespace lab2
 
             // устанавливаем контекст данных
             services.AddDbContext<ReqContext>(options => options.UseSqlServer(con));
-
-            services.AddMvcCore();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

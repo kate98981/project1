@@ -32,10 +32,10 @@ namespace lab2.Controllers
         }
 
         // GET: api/Client/5
-        [HttpGet("{id}", Name = "Get")]
-        public async Task<ActionResult<Client>> Get(int id)
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
         {
-            Client client = await db.Clients.FirstOrDefaultAsync(x => x.Id == id);
+            Client client = db.Clients.FirstOrDefault(x => x.Id == id);
             if (client == null)
                 return NotFound();
             return new ObjectResult(client);
@@ -55,9 +55,9 @@ namespace lab2.Controllers
             return Ok(client);
         }
 
-        // PUT: api/Client/5
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Client>> Put(Client client)
+        // PUT api/client/
+        [HttpPut]
+        public async Task<ActionResult<Client>> Put(int id, [FromBody]Client client)
         {
             if (client == null)
             {
@@ -73,7 +73,7 @@ namespace lab2.Controllers
             return Ok(client);
         }
 
-        // DELETE: api/ApiWithActions/5
+        // DELETE: api/client/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Client>> Delete(int id)
         {
@@ -86,5 +86,7 @@ namespace lab2.Controllers
             await db.SaveChangesAsync();
             return Ok(client);
         }
+
+
     }
 }
